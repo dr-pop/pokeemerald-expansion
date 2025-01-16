@@ -3,3 +3,7 @@ This file serves no purpose in this pokeemerald project.
 It is only there to test out the functions of Git.
 
 Bla bla 16-01-2025 15:09.
+
+---
+
+This was written in the rainbow branch.
