@@ -1,12 +1,291 @@
 raw `
 RustboroCity_PokemonSchool_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_PokemonSchool_OnTransition
 	.byte 0
 
-RustboroCity_PokemonSchool_EventScript_Blackboard::
-	lockall
-	msgbox RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges, MSGBOX_DEFAULT
-	goto RustboroCity_PokemonSchool_EventScript_ChooseBlackboardTopic
+RustboroCity_PokemonSchool_OnTransition:
+	//compare VAR_WILLYSTAD_CITY_STATE, 4
+	goto_if_unset FLAG_HIDE_WILLYSTAD_LAB_PROF, RustboroCity_PokemonSchool_EventScript_PositionScientist
 	end
+
+RustboroCity_PokemonSchool_EventScript_PositionScientist::
+	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+@ new:
+
+// ======
+// NPCS
+// ======
+
+RustboroCity_PokemonSchool_EventScript_Blackboard:: @ 8213EA9
+	msgbox RustboroCity_PokemonSchool_Text_Blackboard, MSGBOX_SIGN
+	end
+
+RustboroCity_PokemonSchool_EventScript_Computer:: @ 8213EA9
+	msgbox RustboroCity_PokemonSchool_Text_Computer, MSGBOX_SIGN
+	end
+
+RustboroCity_PokemonSchool_EventScript_Machine:: @ 8213EA9
+	msgbox RustboroCity_PokemonSchool_Text_Machine, MSGBOX_SIGN
+	end
+
+RustboroCity_PokemonSchool_EventScript_Artefact:: @ 8213EA9
+	msgbox RustboroCity_PokemonSchool_Text_Artefact, MSGBOX_SIGN
+	end
+
+RustboroCity_PokemonSchool_EventScript_Scientist1:: @ 8213EA9
+	lock
+	msgbox RustboroCity_PokemonSchool_Text_Scientist1, MSGBOX_SIGN
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_Scientist2:: @ 8213EA9
+	msgbox RustboroCity_PokemonSchool_Text_Scientist2, MSGBOX_NPC
+	end
+
+RustboroCity_PokemonSchool_EventScript_Scientist3:: @ 8213EA9
+	lock
+	faceplayer
+	compare VAR_WILLYSTAD_CITY_STATE, 4
+	goto_if_eq RustboroCity_PokemonSchool_EventScript_Scientist4
+	msgbox RustboroCity_PokemonSchool_Text_Scientist3, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_Scientist4::
+	goto_if_set FLAG_HIDE_WILLYSTAD_LAB_PROF, RustboroCity_PokemonSchool_EventScript_Scientist5
+	msgbox RustboroCity_PokemonSchool_Text_Scientist4, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_Scientist5::
+	msgbox RustboroCity_PokemonSchool_Text_Scientist5, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_SchoolBoyM:: @ 8213EA9
+	msgbox RustboroCity_PokemonSchool_Text_SchoolBoyM, MSGBOX_NPC
+	end
+
+RustboroCity_PokemonSchool_Text_Blackboard: @ 8214A5F
+	.string "It's full of diagrams and scientific\n"
+	.string "formulas.$"
+
+RustboroCity_PokemonSchool_Text_Computer: @ 8214A5F
+	.string "There's a long list of files…\p"
+	.string "“Photosynthesis”…\p"
+	.string "“Technical Machine protocol”…\p"
+	.string "“Archaeological sites”…\p"
+	.string "Better not mess around with it!$"
+
+RustboroCity_PokemonSchool_Text_Machine: @ 8214A5F
+	.string "There's a handwritten note…\p"
+	.string "“Pokémon Extraction Machine\n"
+	.string "Poké-X Machine in short”$"
+	
+RustboroCity_PokemonSchool_Text_Artefact: @ 8214A5F
+	.string "It contains what looks like a dried\n"
+	.string "flower. It's very colorful.$"
+
+RustboroCity_PokemonSchool_Text_Scientist1: @ 8214A5F
+	.string "Hmm… If Y equals the sum of R and B\n"
+	.string "plus 25…\p"
+	.string "And the delta between C and sigma G, S\n"
+	.string "is equal to 245…\p"
+	.string "Then E minus R and S must equal 384!$"
+	
+RustboroCity_PokemonSchool_Text_ScientistX: @ 8214A5F
+	.string "The professor recently returned from\n"
+	.string "an underwater expedition.\p"
+	.string "People tend to forget that there\n"
+	.string "are plants underwater as well!$"
+
+RustboroCity_PokemonSchool_Text_Scientist2: @ 8214A5F
+	.string "We have developed a machine that can\n"
+	.string "use plants and berries to produce\l"
+	.string "useful items for trainers.\p"
+	.string "Now they are installing them in\n"
+	.string "Pokémon Centers across the Island!$"
+	
+RustboroCity_PokemonSchool_Text_Scientist3: @ 8214A5F
+	.string "This is the laboratory of Prof. Buxus.\p"
+	.string "He just left to the City Hall to present\n"
+	.string "his latest findings.$"
+	
+RustboroCity_PokemonSchool_Text_Scientist4: @ 8214A5F
+	.string "Prof. Buxus is about to leave again\n"
+	.string "on expedition.\p"
+	.string "Our team is looking for a peculiar\n"
+	.string "flower in Lessis Moor.$"
+
+RustboroCity_PokemonSchool_Text_Scientist5: @ 8214A5F
+	.string "Prof. Buxus left on expedition.\p"
+	.string "He is looking for a peculiar flower.$"
+
+RustboroCity_PokemonSchool_Text_SchoolBoyM: @ 8214A5F
+	.string "The scientists in this laboratory\n"
+	.string "know a lot about plants and Pokémon.\p"
+	.string "I always thought flowers were for\n"
+	.string "girls, but that's not true at all!$"
+
+// =====
+// PROF SEQUENCE
+// =====
+
+RustboroCity_PokemonSchool_EventScript_ProfBuxus:: @ 8213EA9
+	lock
+	faceplayer
+	msgbox RustboroCity_PokemonSchool_Text_Prof1, MSGBOX_DEFAULT
+	closemessage
+	delay 16
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox RustboroCity_PokemonSchool_Text_ReceivedPokedex, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	setflag FLAG_SYS_POKEDEX_GET
+	//setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	delay 16
+	msgbox RustboroCity_PokemonSchool_Text_Prof2, MSGBOX_DEFAULT
+	closemessage
+	delay 16
+	giveitem ITEM_POKE_BALL, 5
+	delay 16
+	msgbox RustboroCity_PokemonSchool_Text_Prof3, MSGBOX_DEFAULT
+	closemessage
+	delay 16
+	switch VAR_FACING
+	case DIR_SOUTH, RustboroCity_PokemonSchool_EventScript_ProfBuxusSouth
+	case DIR_NORTH, RustboroCity_PokemonSchool_EventScript_ProfBuxusNorth
+	case DIR_WEST, RustboroCity_PokemonSchool_EventScript_ProfBuxusWest
+	release
+	end
+
+RustboroCity_PokemonSchool_Text_Prof1:
+	.string "Prof. Buxus: Oh, hi, {PLAYER}!\p"
+	.string "How is your Pokémon doing?\p"
+	.string "Listen, if you're planning to go\n"
+	.string "on an adventure with your Pokémon,\l"
+	.string "I want you to have this.$"
+
+RustboroCity_PokemonSchool_Text_ReceivedPokedex: @ 81FAC32
+	.string "{PLAYER} received the Pokédex!$"
+
+RustboroCity_PokemonSchool_Text_Prof2:
+	.string "Prof. Buxus: This is a Pokédex.\p"
+	.string "It is a device that records\n"
+	.string "information about all the Pokémon\l"
+	.string "you find and catch.\p"
+	.string "Oh, speaking of which,\n"
+	.string "take this too!$"
+	
+RustboroCity_PokemonSchool_Text_Prof3:
+	.string "Prof. Buxus: You can catch Pokémon\n"
+	.string "you encounter in the wild.\p"
+	.string "Just throw a Poké Ball at them\n"
+	.string "when they're weak.$"
+	
+RustboroCity_PokemonSchool_EventScript_ProfBuxusSouth::
+	applymovement 5, RustboroCity_PokemonSchool_Movement_ProfSouth
+	waitmovement 0
+	goto RustboroCity_PokemonSchool_EventScript_ProfBuxusExit
+	end
+
+RustboroCity_PokemonSchool_Movement_ProfSouth:
+	walk_in_place_up
+	walk_in_place_up
+	step_end
+
+RustboroCity_PokemonSchool_EventScript_ProfBuxusNorth::
+	applymovement 5, RustboroCity_PokemonSchool_Movement_ProfNorth
+	waitmovement 0
+	goto RustboroCity_PokemonSchool_EventScript_ProfBuxusExit
+	end
+
+RustboroCity_PokemonSchool_Movement_ProfNorth:
+	walk_in_place_down
+	walk_in_place_down
+	step_end
+
+RustboroCity_PokemonSchool_EventScript_ProfBuxusWest::
+	applymovement 5, RustboroCity_PokemonSchool_Movement_ProfWest
+	waitmovement 0
+	goto RustboroCity_PokemonSchool_EventScript_ProfBuxusExit
+	end
+
+RustboroCity_PokemonSchool_Movement_ProfWest:
+	walk_in_place_right
+	walk_in_place_right
+	step_end
+
+RustboroCity_PokemonSchool_EventScript_ProfBuxusExit::	
+	msgbox RustboroCity_PokemonSchool_Text_Prof4, MSGBOX_DEFAULT
+	closemessage
+	delay 16
+	switch VAR_FACING
+	case DIR_SOUTH, RustboroCity_PokemonSchool_EventScript_ProfBuxusExit2
+	case DIR_NORTH, RustboroCity_PokemonSchool_EventScript_PlayerMove
+	case DIR_WEST, RustboroCity_PokemonSchool_EventScript_ProfBuxusExit2
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_PlayerMove::
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_PokemonSchool_Movement_PlayerMove
+	waitmovement 0
+	goto RustboroCity_PokemonSchool_EventScript_ProfBuxusExit2
+	end
+
+RustboroCity_PokemonSchool_Movement_PlayerMove:
+	walk_right
+	face_left
+	step_end
+
+RustboroCity_PokemonSchool_EventScript_ProfBuxusExit2::
+	applymovement 5, RustboroCity_PokemonSchool_Movement_Prof2
+	waitmovement 0
+	delay 8
+	playse SE_RG_DOOR
+	delay 8
+	removeobject 5
+	setflag FLAG_HIDE_WILLYSTAD_LAB_PROF
+	goto RustboroCity_PokemonSchool_EventScript_CheckWillystadState
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_CheckWillystadState::
+	compare VAR_WILLYSTAD_CITY_STATE, 5
+	goto_if_eq RustboroCity_PokemonSchool_EventScript_SetVar6
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_SetVar6::
+	setvar VAR_WILLYSTAD_CITY_STATE, 6
+	release
+	end
+
+RustboroCity_PokemonSchool_Text_Prof4:
+	.string "Okay, {PLAYER}.\p"
+	.string "I am heading to Lessis Moor\n"
+	.string "to do more field research.\p"
+	.string "It is an exciting time to\n"
+	.string "be a scientist.\p"
+	.string "Take care, {PLAYER}!$"
+
+RustboroCity_PokemonSchool_Movement_Prof2:
+	walk_in_place_down
+	walk_in_place_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+@ old:
+
+//RustboroCity_PokemonSchool_EventScript_Blackboard::
+	//lockall
+	//msgbox RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges, MSGBOX_DEFAULT
+	//goto RustboroCity_PokemonSchool_EventScript_ChooseBlackboardTopic
+	//end
 
 RustboroCity_PokemonSchool_EventScript_ChooseBlackboardTopic::
 	message RustboroCity_PokemonSchool_Text_ReadWhichTopic
