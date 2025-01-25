@@ -2,8 +2,10 @@ raw `
 RustboroCity_Flat2_1F_MapScripts::
 	.byte 0
 
+@ new:
+
 RustboroCity_Flat2_1F_EventScript_OldWoman::
-	msgbox RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere, MSGBOX_NPC
+	msgbox RustboroCity_Flat2_1F_Text_RichCity, MSGBOX_NPC
 	end
 
 RustboroCity_Flat2_1F_EventScript_Skitty::
@@ -16,11 +18,15 @@ RustboroCity_Flat2_1F_EventScript_Skitty::
 	release
 	end
 
-RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere:
-	.string "DEVON CORPORATION's workers live in\n"
-	.string "this building.$"
+RustboroCity_Flat2_1F_Text_RichCity: @ 8215F93
+	.string "Our city has become rich through trade,\n"
+	.string "but we don't produce anything.\p"
+	.string "Without the other towns on the Island,\n"
+	.string "we would be nothing.$"
 
 RustboroCity_Flat2_1F_Text_Skitty:
 	.string "SKITTY: Gyaaaah!$"
 
-`
+@ old:
+
+// none

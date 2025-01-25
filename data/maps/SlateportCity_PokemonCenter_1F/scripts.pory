@@ -19,13 +19,36 @@ SlateportCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
-SlateportCity_PokemonCenter_1F_EventScript_Sailor::
-	msgbox SlateportCity_PokemonCenter_1F_Text_RaiseDifferentTypesOfPokemon, MSGBOX_NPC
+@ new:
+
+SlateportCity_PokemonCenter_1F_EventScript_Sailor:: @ 820DAE1
+	msgbox SlateportCity_PokemonCenter_1F_Text_WillyTheGreat, MSGBOX_NPC
 	end
 
-SlateportCity_PokemonCenter_1F_EventScript_Woman::
-	msgbox SlateportCity_PokemonCenter_1F_Text_TradedMonWithFriend, MSGBOX_NPC
+SlateportCity_PokemonCenter_1F_EventScript_Woman:: @ 820DAEA
+	msgbox SlateportCity_PokemonCenter_1F_Text_IntoTheWild, MSGBOX_NPC
 	end
+
+SlateportCity_PokemonCenter_1F_Text_WillyTheGreat: @ 820DAF3
+	.string "This city is named after its founder,\n"
+	.string "Willy the Great.\p"
+	.string "I wish I had a city named after myself.$"
+
+SlateportCity_PokemonCenter_1F_Text_IntoTheWild: @ 820DBBC
+	.string "I'm mustering up courage to go out\n"
+	.string "into the wild with my Pokémon.\p"
+	.string "My mom tells me I'm strong enough,\n"
+	.string "but I don't feel ready yet.$"
+
+@ old:
+
+//SlateportCity_PokemonCenter_1F_EventScript_Sailor::
+	//msgbox SlateportCity_PokemonCenter_1F_Text_RaiseDifferentTypesOfPokemon, MSGBOX_NPC
+	//end
+
+//SlateportCity_PokemonCenter_1F_EventScript_Woman::
+	//msgbox SlateportCity_PokemonCenter_1F_Text_TradedMonWithFriend, MSGBOX_NPC
+	//end
 
 SlateportCity_PokemonCenter_1F_Text_RaiseDifferentTypesOfPokemon:
 	.string "Want a tip for battling?\p"

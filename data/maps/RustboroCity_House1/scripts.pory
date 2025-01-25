@@ -2,6 +2,27 @@ raw `
 RustboroCity_House1_MapScripts::
 	.byte 0
 
+@ new:
+
+RustboroCity_House1_EventScript_Husband:: @ 82159DF
+	msgbox RustboroCity_House1_Text_Husband, MSGBOX_NPC
+	end
+
+RustboroCity_House1_EventScript_Daughter:: @ 82159DF
+	msgbox RustboroCity_House1_Text_Daughter, MSGBOX_NPC
+	end
+
+RustboroCity_House1_Text_Husband: @ 8215B57
+	.string "My husband is a true adventurer. But\n"
+	.string "I prefer the coziness of being home.\p"
+	.string "Huh, opposites attract, I guess.$"
+
+RustboroCity_House1_Text_Daughter: @ 8215B57
+	.string "Daddy said that if I study hard, one\n"
+	.string "day I will join him on his travels!$"
+
+@ old:
+
 RustboroCity_House1_EventScript_Trader::
 	lock
 	faceplayer
