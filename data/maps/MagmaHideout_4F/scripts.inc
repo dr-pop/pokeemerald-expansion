@@ -139,7 +139,7 @@ MagmaHideout_4F_EventScript_Maxie::
 # 70 "data/maps/MagmaHideout_4F/scripts.pory"
 	clearflag FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY
 # 71 "data/maps/MagmaHideout_4F/scripts.pory"
-	setvar VAR_SLATEPORT_CITY_STATE, 1
+	setvar VAR_WILLYSTAD_CITY_STATE, 1
 # 72 "data/maps/MagmaHideout_4F/scripts.pory"
 	setflag FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT
 # 73 "data/maps/MagmaHideout_4F/scripts.pory"

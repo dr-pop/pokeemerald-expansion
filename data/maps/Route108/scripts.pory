@@ -1,6 +1,277 @@
 raw `
 Route108_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Test_OnFrame
 	.byte 0
+
+Test_OnFrame: @ 81DCD12
+	map_script_2 VAR_EVER_GRANDE_CITY_STATE, 1, Test_EventScript_IntroTest_Simple
+	map_script_2 VAR_EVER_GRANDE_CITY_STATE, 0, Test_EventScript_IntroTest_Simple
+	.2byte 0
+
+@ new:
+
+// === Simple version ===
+
+Test_EventScript_IntroTest_Simple::
+	lock
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Simple_EnterPlayer // move camera up
+	waitmovement 0
+	applymovement 1, Simple_EnterSub // move camera up
+	//playse SE_MIZU           // Puddle
+	//waitse
+	waitmovement 0
+	applymovement 5, Simple_WingullGlide1
+	applymovement 4, Simple_WingullGlide2
+	applymovement 2, Simple_WingullGlide3
+	applymovement 1, Simple_PlayerSub1
+	applymovement OBJ_EVENT_ID_PLAYER, Simple_PlayerSub1
+	delay 60
+	delay 60
+	delay 60
+	delay 60
+	playmoncry SPECIES_WINGULL, 0
+	delay 60
+	delay 60
+	playmoncry SPECIES_WINGULL, 0
+	delay 60
+	delay 60
+	delay 30
+	playmoncry SPECIES_WINGULL, 0
+	waitmovement 0
+	setvar VAR_EVER_GRANDE_CITY_STATE, 2
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	warp MAP_ABANDONED_SHIP_CAPTAINS_OFFICE, 255, 5, 4
+	waitstate
+	release
+	end
+
+Simple_EnterPlayer:
+	set_invisible
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+Simple_EnterSub:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	step_end
+	
+Simple_PlayerSub1: // 38 steps
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_in_place_slow_right
+	walk_in_place_slow_right
+	walk_in_place_slow_right
+	walk_in_place_slow_right
+	walk_in_place_slow_right
+	step_end
+
+Simple_WingullGlide1:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	set_invisible
+	step_end
+
+Simple_WingullGlide2:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	set_invisible
+	step_end
+
+Simple_WingullGlide3:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	set_invisible
+	step_end
+
+
+@ old:
 
 Route108_EventScript_Jerome::
 	trainerbattle_single TRAINER_JEROME, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated

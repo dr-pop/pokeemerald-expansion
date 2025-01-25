@@ -2,13 +2,26 @@ raw `
 RustboroCity_House2_MapScripts::
 	.byte 0
 
+@ new:
+
+RustboroCity_House2_EventScript_LittleGirl:: @ 8215EBD
+	msgbox RustboroCity_House2_Text_Nintendo64, MSGBOX_NPC
+	end
+
+RustboroCity_House2_Text_Nintendo64: @ 8215F21
+	.string "Check this out!\p"
+	.string "I found my dad's old video\n"
+	.string "game console!$"
+
+@ old:
+
 RustboroCity_House2_EventScript_PokefanF::
 	msgbox RustboroCity_House2_Text_TrainerSchoolExcellent, MSGBOX_NPC
 	end
 
-RustboroCity_House2_EventScript_LittleGirl::
-	msgbox RustboroCity_House2_Text_RoxanneKnowsALot, MSGBOX_NPC
-	end
+//RustboroCity_House2_EventScript_LittleGirl::
+	//msgbox RustboroCity_House2_Text_RoxanneKnowsALot, MSGBOX_NPC
+	//end
 
 RustboroCity_House2_Text_TrainerSchoolExcellent:
 	.string "The TRAINER'S SCHOOL is excellent.\p"

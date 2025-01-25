@@ -4,6 +4,19 @@ raw `
 RustboroCity_Flat1_2F_MapScripts::
 	.byte 0
 
+@ new: 
+
+RustboroCity_Flat1_2F_EventScript_Girl:: @ 82151D7
+	msgbox RustboroCity_Flat1_2F_Text_Dolls, MSGBOX_NPC
+	end
+
+RustboroCity_Flat1_2F_Text_Dolls: @ 821524F
+	.string "My sister and I collect Pokémon\n"
+	.string "Dolls.\p"
+	.string "Five down, 891 to go!$"
+
+@ old:
+
 RustboroCity_Flat1_2F_EventScript_WaldasDad::
 	lock
 	faceplayer

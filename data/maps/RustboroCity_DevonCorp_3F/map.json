@@ -2,81 +2,98 @@
   "id": "MAP_RUSTBORO_CITY_DEVON_CORP_3F",
   "name": "RustboroCity_DevonCorp_3F",
   "layout": "LAYOUT_RUSTBORO_CITY_DEVON_CORP_3F",
-  "music": "MUS_RUSTBORO",
-  "region_map_section": "MAPSEC_RUSTBORO_CITY",
+  "music": "MUS_EVER_GRANDE",
+  "region_map_section": "MAPSEC_SLATEPORT_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 17,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 11,
+      "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_DevonCorp_3F_EventScript_MrStone",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_Woman",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 3,
-      "y": 5,
+      "x": 4,
+      "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_DevonCorp_3F_EventScript_Employee",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_EmployeeBalls",
       "flag": "FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 15,
-      "y": 5,
+      "x": 4,
+      "y": 13,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_DevonCorp_3F_EventScript_MrStone",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_Librarian",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 2,
-      "y": 1,
+      "x": 15,
+      "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_2F",
+      "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 15,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 1,
-      "y": 5,
+      "x": 10,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 6,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay"
     },
     {
       "type": "sign",
-      "x": 1,
-      "y": 7,
+      "x": 4,
+      "y": 6,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay"
