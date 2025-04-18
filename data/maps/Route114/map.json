@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE115",
-      "offset": 40,
-      "direction": "left"
+      "map": "MAP_FALLARBOR_TOWN",
+      "offset": -20,
+      "direction": "up"
     },
     {
-      "map": "MAP_FALLARBOR_TOWN",
+      "map": "MAP_ROUTE115",
       "offset": 0,
-      "direction": "right"
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -414,7 +414,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

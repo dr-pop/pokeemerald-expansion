@@ -14,8 +14,8 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_PACIFIDLOG_TOWN",
-      "offset": 0,
+      "map": "MAP_ROUTE105",
+      "offset": 10,
       "direction": "left"
     },
     {
@@ -139,6 +139,10 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }
