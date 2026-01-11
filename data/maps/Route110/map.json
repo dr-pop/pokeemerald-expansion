@@ -14,13 +14,18 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SLATEPORT_CITY",
+      "map": "MAP_ROUTE115",
       "offset": 0,
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE103",
-      "offset": 60,
+      "map": "MAP_FALLARBOR_TOWN",
+      "offset": 1,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE114",
+      "offset": 11,
       "direction": "left"
     }
   ],
