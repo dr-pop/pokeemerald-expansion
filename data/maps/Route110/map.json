@@ -22,11 +22,6 @@
       "map": "MAP_FALLARBOR_TOWN",
       "offset": 1,
       "direction": "left"
-    },
-    {
-      "map": "MAP_ROUTE114",
-      "offset": 11,
-      "direction": "left"
     }
   ],
   "object_events": [
