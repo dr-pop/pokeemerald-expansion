@@ -20,11 +20,6 @@
     },
     {
       "map": "MAP_ROUTE121",
-      "offset": 100,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_LITTLEROOT_TOWN",
       "offset": 0,
       "direction": "down"
     }

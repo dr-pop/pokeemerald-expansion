@@ -19,9 +19,14 @@
       "direction": "left"
     },
     {
-      "map": "MAP_LITTLEROOT_TOWN",
-      "offset": 0,
+      "map": "MAP_ROUTE120",
+      "offset": -40,
       "direction": "right"
+    },
+    {
+      "map": "MAP_LITTLEROOT_TOWN",
+      "offset": 90,
+      "direction": "down"
     }
   ],
   "object_events": [

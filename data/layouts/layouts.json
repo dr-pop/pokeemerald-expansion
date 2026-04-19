@@ -94,10 +94,10 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN",
       "name": "LittlerootTown_Layout",
-      "width": 40,
+      "width": 70,
       "height": 30,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Sootopolis",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown/map.bin"
     },
@@ -265,7 +265,7 @@
       "id": "LAYOUT_ROUTE111",
       "name": "Route111_Layout",
       "width": 40,
-      "height": 140,
+      "height": 100,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Route111/border.bin",
@@ -354,10 +354,10 @@
     {
       "id": "LAYOUT_ROUTE120",
       "name": "Route120_Layout",
-      "width": 40,
-      "height": 50,
+      "width": 50,
+      "height": 80,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route120/border.bin",
       "blockdata_filepath": "data/layouts/Route120/map.bin"
     },
@@ -1084,9 +1084,9 @@
     {
       "id": "LAYOUT_SOOTOPOLIS_CITY_GYM_1F",
       "name": "SootopolisCity_Gym_1F_Layout",
-      "width": 17,
+      "width": 23,
       "height": 26,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SootopolisGym",
       "border_filepath": "data/layouts/SootopolisCity_Gym_1F/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_Gym_1F/map.bin"
@@ -1094,9 +1094,9 @@
     {
       "id": "LAYOUT_SOOTOPOLIS_CITY_GYM_B1F",
       "name": "SootopolisCity_Gym_B1F_Layout",
-      "width": 17,
-      "height": 26,
-      "primary_tileset": "gTileset_Building",
+      "width": 55,
+      "height": 55,
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SootopolisGym",
       "border_filepath": "data/layouts/SootopolisCity_Gym_B1F/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_Gym_B1F/map.bin"
