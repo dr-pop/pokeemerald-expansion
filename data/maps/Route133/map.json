@@ -19,9 +19,14 @@
       "direction": "left"
     },
     {
-      "map": "MAP_ROUTE132",
-      "offset": 0,
+      "map": "MAP_ROUTE120",
+      "offset": -40,
       "direction": "right"
+    },
+    {
+      "map": "MAP_LITTLEROOT_TOWN",
+      "offset": 90,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -156,7 +161,13 @@
       "flag": "FLAG_ITEM_ROUTE_133_MAX_REVIVE"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }
